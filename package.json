@@ -21,6 +21,7 @@
     "log:prod": "$npm_package_config_ssh_prod \"pm2 logs $npm_package_config_appname-prod\" --lines 1000",
     "poststart": "npm run log",
     "postrestart": "npm run log",
+    "test": "NODE_PATH=. node test-runner.js",
     "stop": "pm2 delete $npm_package_config_appname-dev",
     "deploy:prod": "pm2 deploy ecosystem.json prod",
     "predeploy:prod": "concurrent \"git push\" \"git push origin master:prod\"",
@@ -53,7 +54,8 @@
     "node-mime": "^1.0.0",
     "passport": "^0.3.2",
     "passport-http-bearer": "^1.0.1",
-    "request-promise": "^3.0.0"
+    "request-promise": "^3.0.0",
+    "socket.io-handler": "^0.1.1"
   },
   "devDependencies": {
     "co": "^4.6.0",

@@ -21,17 +21,21 @@ function boot(){
         let port = portInit;
         portInit++;
 
-        app.listen(port, function(){
+        const server = app.listen(port, function(){
             console.log('config:', config);
             console.log('NODE_ENV:', process.env.NODE_ENV);
             console.log('Express app started on port:', port);
-            require('./test-runner');
         }).on('error', function(err){
             if(err.code == 'EADDRINUSE'){
                 console.log('****** EADDRINUSE, find next');
                 boot();
             }
         });
+
+        /**
+         * Boot socket.io
+         */
+        require('config/socketHandlers')(server);
 
     })();
 }
