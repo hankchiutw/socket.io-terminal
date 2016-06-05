@@ -15,7 +15,24 @@
 </head>
 <body>
     <h1>socket.io-terminal</h1>
+    <div class='console'>
 
+    </div>
+    <template id='cursor-row'>
+        <p>
+            <span>$</span>
+            <span class='command-input-wrapper'><input type='text' onkeyup='tryExec(event)' class='command-input' /></span>
+        </p> 
+    </template>
+
+    <template id='message-row'>
+        <p>
+            <span>[INFO]</span>
+            <span class='message'></span>
+        </p> 
+    </template>
+
+    <script src="socket.io/socket.io.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

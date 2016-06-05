@@ -28,6 +28,7 @@ function *exec(command){
     proc.stdout.on('data', function(data){
         console.log('stdout:', data.toString());
         socket.emit('execOk', data.toString());
+        socket.broadcast.emit('execOk', data.toString());
     });
 
     proc.stderr.on('data', function(data){
