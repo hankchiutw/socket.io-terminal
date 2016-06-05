@@ -8,8 +8,7 @@
 module.exports = function(server){
     logger.info('Config socket handlers ...');
 
-    //const handler = require('socket.io-handler')(server);
-    const handler = require('modules/socket.io-handler/')(server);
+    const handler = require('socket.io-handler')(server);
 
     handler.defineEvents({
         execOk: function *(result){

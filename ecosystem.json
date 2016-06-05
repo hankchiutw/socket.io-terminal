@@ -4,6 +4,7 @@
       "name": "socket.io-terminal-"+process.env.NODE_ENV || 'dev',
       "script": "app.js",
       "node_args": "--harmony",
+      "max_restart": 3,
       "watch": ["app", "config", "lib", "app.js", "*.json", "modules", "test-runner.js", "test/*.js"],
       "ignore_watch": ["[\\/\\\\]\\./", "node_modules", "./**/.*", "*.log"],
       "env": {

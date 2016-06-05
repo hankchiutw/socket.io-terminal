@@ -16,6 +16,11 @@
     "ssh_prod": "ssh -t root@example.com -p 3124"
   },
   "scripts": {
+    "build": "sudo docker build -t $npm_package_config_appname .",
+    "run": "sudo docker run -itd --restart=always -p 3000:80 --name $npm_package_config_appname $npm_package_config_appname",
+    "kill": "sudo docker kill $npm_package_config_appname && sudo docker rm $npm_package_config_appname",
+    "rerun": "npm run kill && npm run run",
+    "postrun": "sleep 1 && sudo docker logs $npm_package_config_appname",
     "start": "NODE_ENV=dev pm2 start ecosystem.json",
     "log": "pm2 logs $npm_package_config_appname-dev --lines 1000",
     "log:prod": "$npm_package_config_ssh_prod \"pm2 logs $npm_package_config_appname-prod\" --lines 1000",
