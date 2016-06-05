@@ -1,8 +1,6 @@
 'use strict';
 /** @module */
 
-const errorHandler = require("config/middlewares/errorHandler");
-
 /**
  * Dispatch socket events of the io object
  * @param {Object} io Object of socket.io
@@ -10,9 +8,16 @@ const errorHandler = require("config/middlewares/errorHandler");
 module.exports = function(server){
     logger.info('Config socket handlers ...');
 
-    const handler = require('socket.io-handler')(server);
-    handler.require('app/socketHandlers/user');
-    handler.require('app/socketHandlers/auction');
-    
+    //const handler = require('socket.io-handler')(server);
+    const handler = require('modules/socket.io-handler/')(server);
+
+    handler.defineEvents({
+        execOk: function *(result){
+            console.log('execOk:', result);
+        }
+    });
+
+    handler.require('app/socketHandlers/proc');
+
 };
 

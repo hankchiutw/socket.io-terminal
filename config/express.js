@@ -9,9 +9,6 @@ const path = require('path');
 const crypto = require('crypto');
 const mime = require('node-mime');
 
-const res = require('config/middlewares/res');
-const cors = require('config/middlewares/cors');
-
 /**
  * Expose
  */
@@ -33,12 +30,5 @@ module.exports = function(app){
     // request parser
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
-
-    /**
-     * Common middlewares
-     */
-
-    app.use(cors);
-    app.use(res);
 
 };

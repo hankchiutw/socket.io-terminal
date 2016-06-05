@@ -7,7 +7,6 @@ const mocha = new Mocha({
 
 const read = require('fs-readdir-recursive');
 
-addDir('./app/models');
 addDir('./test');
 
 console.log('****** test-runner.js ******');

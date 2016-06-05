@@ -10,7 +10,6 @@ const prod = require('./env/prod');
  * Will be overrode by env specified settings
  */
 const defaults = {
-    dbOptions: { server: { keepAlive: 256, reconnectTries: Number.MAX_VALUE } },
     apiPath: '/api/v1'
 };
 

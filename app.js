@@ -2,7 +2,6 @@
 
 const express = require('express');
 const config = require('config/config');
-const auth = require('config/auth');
 
 const app = express();
 
@@ -11,9 +10,8 @@ const app = express();
  */
 
 require('config/express')(app);
-require('config/routes')(app, auth);
 
-require('config/db')(boot);
+boot();
 
 function boot(){
     let portInit = process.env.PORT || config.port;
