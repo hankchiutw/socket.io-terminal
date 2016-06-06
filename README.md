@@ -1,5 +1,6 @@
 # socket.io-terminal
 Demonstrate socket.io usage
+[![travis status](https://travis-ci.org/hankchiutw/socket.io-terminal.svg?branch=master)](https://travis-ci.org/hankchiutw/socket.io-terminal)
 
 ### Folder structure
 ```sh
