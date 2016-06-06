@@ -10,13 +10,17 @@ module.exports = function(server){
 
     const handler = require('socket.io-handler')(server);
 
+    handler.require('app/socketHandlers/proc');
     handler.defineEvents({
+        message: function *(data){
+            const socket = this;
+            socket.emit('messageOk', data);
+            socket.broadcast.emit('messageOk', data);
+        },
         execOk: function *(result){
             console.log('execOk:', result);
         }
     });
-
-    handler.require('app/socketHandlers/proc');
 
 };
 

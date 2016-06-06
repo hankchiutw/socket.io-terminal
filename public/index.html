@@ -14,9 +14,8 @@
 
 </head>
 <body>
-    <h1>socket.io-terminal</h1>
     <div class='console'>
-
+        <h3 class='title'>socket.io-terminal</h4>
     </div>
     <template id='cursor-row'>
         <p>
@@ -26,9 +25,16 @@
     </template>
 
     <template id='message-row'>
-        <p>
+        <p class='message-wrapper'>
             <span>[INFO]</span>
+            <span class='time'></span>
             <span class='message'></span>
+        </p> 
+    </template>
+
+    <template id='result-row'>
+        <p>
+            <span class='result'></span>
         </p> 
     </template>
 
