@@ -2,6 +2,6 @@
 
 module.exports = {
     host: 'localhost',
-    publicHostUrl: 'https://domain',
+    publicHostUrl: 'http://localhost:80',
     port: 80
 };

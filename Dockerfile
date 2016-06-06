@@ -15,7 +15,7 @@ COPY . /app
 RUN npm i
 
 # create boot script
-ENV NODE_ENV dev
+ENV NODE_ENV prod
 ENV NODE_PATH /app
 RUN mkdir /etc/service/app
 #RUN echo "#!/bin/bash\npm2 start /app/ecosystem.json" >> /etc/service/app/run
